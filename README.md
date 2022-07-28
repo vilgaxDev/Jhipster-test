@@ -1,5 +1,5 @@
 # project
-This application was generated using JHipster, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.1.0](https://www.jhipster.tech/documentation-archive/v5.1.0).
+This application was generated using JHipster, you can find documentation and help at [[https://www.jhipster.tech/](https://www.jhipster.tech/)](https://www.jhipster.tech/).
 
 ## Development
 
