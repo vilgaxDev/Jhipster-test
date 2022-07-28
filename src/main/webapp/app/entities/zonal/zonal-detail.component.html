@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="zonal">
+            <h2><span jhiTranslate="projectGhApp.zonal.detail.title">Zonal</span> {{zonal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projectGhApp.zonal.zoneName">Zone Name</span></dt>
+                <dd>
+                    <span>{{zonal.zoneName}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectGhApp.zonal.zoneAddress">Zone Address</span></dt>
+                <dd>
+                    <span>{{zonal.zoneAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectGhApp.zonal.zoneIncharge">Zone Incharge</span></dt>
+                <dd>
+                    <span>{{zonal.zoneIncharge}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectGhApp.zonal.status">Status</span></dt>
+                <dd>
+                    <span>{{zonal.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectGhApp.zonal.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{zonal.createdAt}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectGhApp.zonal.updatedAt">Updated At</span></dt>
+                <dd>
+                    <span>{{zonal.updatedAt}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/zonal', zonal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

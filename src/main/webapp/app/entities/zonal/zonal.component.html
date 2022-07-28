@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="projectGhApp.zonal.home.title">Zonals</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-zonal" [routerLink]="['/zonal/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="projectGhApp.zonal.home.createLabel">
+            Create new Zonal
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="zonals">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zoneName"><span jhiTranslate="projectGhApp.zonal.zoneName">Zone Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zoneAddress"><span jhiTranslate="projectGhApp.zonal.zoneAddress">Zone Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zoneIncharge"><span jhiTranslate="projectGhApp.zonal.zoneIncharge">Zone Incharge</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="status"><span jhiTranslate="projectGhApp.zonal.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdAt"><span jhiTranslate="projectGhApp.zonal.createdAt">Created At</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="updatedAt"><span jhiTranslate="projectGhApp.zonal.updatedAt">Updated At</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let zonal of zonals ;trackBy: trackId">
+                <td><a [routerLink]="['/zonal', zonal.id, 'view' ]">{{zonal.id}}</a></td>
+                <td>{{zonal.zoneName}}</td>
+                <td>{{zonal.zoneAddress}}</td>
+                <td>{{zonal.zoneIncharge}}</td>
+                <td>{{zonal.status}}</td>
+                <td>{{zonal.createdAt | date:'medium'}}</td>
+                <td>{{zonal.updatedAt | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/zonal', zonal.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/zonal', zonal.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'zonal/'+ zonal.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="zonals && zonals.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

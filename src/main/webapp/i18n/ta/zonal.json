@@ -1,0 +1,27 @@
+
+{
+    "projectGhApp": {
+        "zonal" : {
+            "home": {
+                "title": "Zonals",
+                "createLabel": "Zonal-ஐ உருவாக்கு",
+                "createOrEditLabel": "Zonal -ஐ மாற்று (அ) உருவாக்கு"
+            },
+            "created": "Zonal புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Zonal மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Zonal நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Zonal {{ id }}?"
+            },
+            "detail": {
+                "title": "Zonal"
+            },
+            "zoneName": "Zone Name",
+            "zoneAddress": "Zone Address",
+            "zoneIncharge": "Zone Incharge",
+            "status": "Status",
+            "createdAt": "Created At",
+            "updatedAt": "Updated At"
+        }
+    }
+}

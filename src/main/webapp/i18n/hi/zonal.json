@@ -1,0 +1,27 @@
+
+{
+    "projectGhApp": {
+        "zonal" : {
+            "home": {
+                "title": "Zonals",
+                "createLabel": "नया Zonal बनाएँ",
+                "createOrEditLabel": "Zonal बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Zonal [identifier: {{ param }}] तैयार है",
+            "updated": "एक Zonal [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Zonal [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Zonal [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Zonal"
+            },
+            "zoneName": "Zone Name",
+            "zoneAddress": "Zone Address",
+            "zoneIncharge": "Zone Incharge",
+            "status": "Status",
+            "createdAt": "Created At",
+            "updatedAt": "Updated At"
+        }
+    }
+}
