@@ -1,9 +1,9 @@
 /******************************************************************************
- *  Property of Nichehands
- *  Nichehands Confidential Proprietary
- *  Nichehands Copyright (C) 2018 All rights reserved
+ *  Property of Kenbrian
+ *  Kenbrian Confidential Proprietary
+ *  Kenbrian Copyright (C) 2018 All rights reserved
  *  ----------------------------------------------------------------------------
- *  Date: 2018/08/07
+ *  Date: 2022/28/07
  *  Target: yarn
  *  -----------------------------------------------------------------------------
  *  File Description    : This file performs CacheConfiguration
